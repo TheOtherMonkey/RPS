@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
-public class PlayerTest {
-
+public class PlayerTest
+{
     private RpsUi mockedUi;
     private GesturePicker mockedPicker;
     private Gesture[] gestures;
@@ -15,7 +15,8 @@ public class PlayerTest {
     private Player target;
 
     @Before
-    public void Setup(){
+    public void Setup()
+    {
         mockedUi = mock(RpsUi.class);
         mockedPicker = mock(GesturePicker.class);
         gestures = new Gesture[]{};
@@ -24,7 +25,8 @@ public class PlayerTest {
     }
 
     @Test
-    public void revealGesture(){
+    public void revealGesture()
+    {
         Gesture mockedGesture = mock(Gesture.class);
         when(mockedPicker.selectGesture(gestures)).thenReturn(mockedGesture);
 
@@ -35,14 +37,15 @@ public class PlayerTest {
     }
 
     @Test
-    public void selectGestureUsesGesturePicker() {
+    public void selectGestureUsesGesturePicker()
+    {
         target.selectGesture(gestures);
         verify(mockedPicker).selectGesture(gestures);
     }
 
     @Test
-    public void selectGestureReturnsSelectedGesture() {
-
+    public void selectGestureReturnsSelectedGesture()
+    {
         Gesture mockedGesture = mock(Gesture.class);
         when(mockedPicker.selectGesture(gestures)).thenReturn(mockedGesture);
 

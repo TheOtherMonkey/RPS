@@ -7,19 +7,21 @@ import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class RandomGesturePickerTest {
-
+public class RandomGesturePickerTest
+{
     private Randomiser mockedRandomiser;
     private RandomGesturePicker target;
 
     @Before
-    public void Setup(){
+    public void Setup()
+    {
         mockedRandomiser = mock(Randomiser.class);
         target = new RandomGesturePicker(mockedRandomiser);
     }
 
     @Test
-    public void selectGesture(){
+    public void selectGesture()
+    {
         Gesture expected = mock(Gesture.class);
         Gesture[] gestures = new Gesture[] {
                 mock(Gesture.class),

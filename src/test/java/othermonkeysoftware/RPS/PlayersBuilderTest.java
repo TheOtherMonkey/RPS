@@ -7,14 +7,15 @@ import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class PlayersBuilderTest {
-
+public class PlayersBuilderTest
+{
     private RpsUi mockedUi;
 
     private PlayersBuilder target;
 
     @Before
-    public void setUp() {
+    public void setUp()
+    {
         mockedUi = mock(RpsUi.class);
 
         target = new PlayersBuilder(mock(RandomGesturePicker.class), mock(UiGesturePicker.class));

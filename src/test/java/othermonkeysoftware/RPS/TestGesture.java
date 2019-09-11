@@ -1,23 +1,28 @@
 package othermonkeysoftware.RPS;
 
-public class TestGesture extends Gesture {
+public class TestGesture extends Gesture
+{
     @Override
-    protected String getName() {
+    protected String getName()
+    {
         return "TEST";
     }
 
     @Override
-    protected String getInputMatchValue() {
+    protected String getInputMatchValue()
+    {
         return "T";
     }
 
     @Override
-    protected String getWinningAdjective() {
+    protected String getWinningAdjective()
+    {
         return "tests";
     }
 
     @Override
-    public Outcome compare(Gesture player2Gesture) {
+    public Outcome compare(Gesture player2Gesture)
+    {
         return null;
     }
 }

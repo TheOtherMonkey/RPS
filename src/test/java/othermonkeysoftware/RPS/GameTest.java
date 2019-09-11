@@ -5,8 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-public class GameTest {
-
+public class GameTest
+{
     private RpsUi mockedUi;
     private PlayersBuilder mockedBuilder;
     private Players mockedPlayers;
@@ -16,7 +16,8 @@ public class GameTest {
     private Game target;
 
     @Before
-    public void setUp() {
+    public void setUp()
+    {
         mockedBuilder = mock(PlayersBuilder.class);
         mockedUi = mock(RpsUi.class);
         mockedPlayers = mock(Players.class);
@@ -30,32 +31,32 @@ public class GameTest {
     }
 
     @Test
-    public void playRoundAsksForGameMode() {
-
+    public void playRoundAsksForGameMode()
+    {
         target.playRound();
 
         verify(mockedUi).askForGameMode();
     }
 
     @Test
-    public void playRoundExecutesRoShamBo() {
-
+    public void playRoundExecutesRoShamBo()
+    {
         target.playRound();
 
         verify(mockedPlayers).roShamBo(gestures);
     }
 
     @Test
-    public void playRoundDisplaysResult(){
-
+    public void playRoundDisplaysResult()
+    {
         target.playRound();
 
         verify(mockedResult).announceWinner(mockedUi);
     }
 
     @Test
-    public void playAgainIsFalseWhenFalseReturnFromConsole() {
-
+    public void playAgainIsFalseWhenFalseReturnFromConsole()
+    {
         when(mockedUi.askToPlayAgain()).thenReturn(false);
 
         boolean actual = target.playAgain();
@@ -64,8 +65,8 @@ public class GameTest {
     }
 
     @Test
-    public void playAgainIsTrueWhenTrueReturnFromConsole() {
-
+    public void playAgainIsTrueWhenTrueReturnFromConsole()
+    {
         when(mockedUi.askToPlayAgain()).thenReturn(true);
 
         boolean actual = target.playAgain();

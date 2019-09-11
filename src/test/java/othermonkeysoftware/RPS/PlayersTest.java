@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
-public class PlayersTest {
-
+public class PlayersTest
+{
     private Player mockedPlayer1;
     private Player mockedPlayer2;
     private Gesture mockedPlayer1Gesture;
@@ -17,7 +17,8 @@ public class PlayersTest {
     private Players target;
 
     @Before
-    public void setUp() {
+    public void setUp()
+    {
         mockedPlayer1 = mock(Player.class);
         mockedPlayer2 = mock(Player.class);
         mockedPlayer1Gesture = mock(Gesture.class);
@@ -31,25 +32,29 @@ public class PlayersTest {
     }
 
     @Test
-    public void roShamBoShouldNotReturnNull() {
+    public void roShamBoShouldNotReturnNull()
+    {
         RpsResult actual = target.roShamBo(validGestures);
         Assert.assertNotNull(actual);
     }
 
     @Test
-    public void roShamBoShouldSelectPlayer1Gesture(){
+    public void roShamBoShouldSelectPlayer1Gesture()
+    {
         target.roShamBo(validGestures);
         verify(mockedPlayer1).selectGesture(validGestures);
     }
 
     @Test
-    public void roShamBoShouldSelectPlayer2Gesture(){
+    public void roShamBoShouldSelectPlayer2Gesture()
+    {
         target.roShamBo(validGestures);
         verify(mockedPlayer2).selectGesture(validGestures);
     }
 
     @Test
-    public void roShamBoShouldCompareGestures(){
+    public void roShamBoShouldCompareGestures()
+    {
         target.roShamBo(validGestures);
 
         verify(mockedPlayer1Gesture).compare(mockedPlayer2Gesture);

@@ -1,11 +1,12 @@
 package othermonkeysoftware.RPS;
 
-public class PlayersBuilder {
-
+public class PlayersBuilder
+{
     private final RandomGesturePicker randomGesturePicker;
     private final UiGesturePicker uiGesturePicker;
 
-    public PlayersBuilder(RandomGesturePicker randomGesturePicker, UiGesturePicker uiGesturePicker){
+    public PlayersBuilder(RandomGesturePicker randomGesturePicker, UiGesturePicker uiGesturePicker)
+    {
         this.randomGesturePicker = randomGesturePicker;
         this.uiGesturePicker = uiGesturePicker;
     }

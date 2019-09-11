@@ -1,10 +1,10 @@
 package othermonkeysoftware.RPS;
 
-public class RpsResult {
-
-    private Player player1;
-    private Player player2;
-    private Outcome outcome;
+public class RpsResult
+{
+    private final Player player1;
+    private final Player player2;
+    private final Outcome outcome;
 
     public RpsResult(Player player1, Player player2, Outcome outcome)
     {
@@ -13,7 +13,8 @@ public class RpsResult {
         this.outcome = outcome;
     }
 
-    public void announceWinner(RpsUi ui) {
+    public void announceWinner(RpsUi ui)
+    {
         this.player1.revealGesture(ui);
         this.player2.revealGesture(ui);
 

@@ -3,11 +3,13 @@ package othermonkeysoftware.RPS;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
-public class ConsoleUi implements RpsUi {
-
+public final class ConsoleUi implements RpsUi
+{
     @Override
-    public boolean askToPlayAgain(){
+    public boolean askToPlayAgain()
+    {
         System.out.println("Do you wish to play again?");
         String response;
         Scanner in = new Scanner(System.in);
@@ -50,7 +52,8 @@ public class ConsoleUi implements RpsUi {
     }
 
     @Override
-    public Gesture askForPlayerGesture(Gesture[] gestures) {
+    public Gesture askForPlayerGesture(Gesture[] gestures)
+    {
         Optional<Gesture> selectedGesture;
 
         do {
@@ -61,7 +64,7 @@ public class ConsoleUi implements RpsUi {
             }
             Scanner in = new Scanner(System.in);
             String input = in.nextLine();
-            selectedGesture = Arrays.stream(gestures).filter(g -> g.matchesInput(input)).findFirst();
+            selectedGesture = Stream.of(gestures).filter(g -> g.matchesInput(input)).findFirst();
 
             if (!selectedGesture.isPresent()) System.out.println("Invalid selection...\n");
 
@@ -71,34 +74,39 @@ public class ConsoleUi implements RpsUi {
     }
 
     @Override
-    public void rescribePlayerGesture(String playerName, String gestureName) {
+    public void describePlayerGesture(String playerName, String gestureName)
+    {
         System.out.print(playerName);
         System.out.print(" selected ");
         System.out.println(gestureName);
     }
 
     @Override
-    public void announceWinner(String playerName) {
+    public void announceWinner(String playerName)
+    {
         System.out.println();
         System.out.print(playerName);
         System.out.println(" won that round");
     }
 
     @Override
-    public void announceDraw() {
+    public void announceDraw()
+    {
         System.out.println("It was a draw");
         System.out.println();
     }
 
     @Override
-    public void describeGesture(String name, String inputValue) {
+    public void describeGesture(String name, String inputValue)
+    {
         System.out.print(name);
         System.out.print(" = ");
         System.out.println(inputValue);
     }
 
     @Override
-    public void describeWinningGesture(String name, String winningAdjective) {
+    public void describeWinningGesture(String name, String winningAdjective)
+    {
         System.out.print(name);
         System.out.print(" ");
         System.out.print(winningAdjective);
@@ -106,7 +114,8 @@ public class ConsoleUi implements RpsUi {
     }
 
     @Override
-    public void describeLosingGesture(String name) {
+    public void describeLosingGesture(String name)
+    {
         System.out.println(name);
         System.out.println();
     }

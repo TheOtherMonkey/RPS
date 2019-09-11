@@ -5,8 +5,8 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
-public class RpsResultTest {
-
+public class RpsResultTest
+{
     private Player mockedPlayer1;
     private Player mockedPlayer2;
     private RpsUi mockedUi;
@@ -14,7 +14,8 @@ public class RpsResultTest {
     private RpsResult target;
 
     @Before
-    public void setUp(){
+    public void setUp()
+    {
         mockedPlayer1 = mock(Player.class);
         mockedPlayer2 = mock(Player.class);
         mockedUi = mock(RpsUi.class);
@@ -23,7 +24,8 @@ public class RpsResultTest {
     }
 
     @Test
-    public void announceWinnerShouldRevealPlayer1Gesture(){
+    public void announceWinnerShouldRevealPlayer1Gesture()
+    {
         target = new RpsResult(mockedPlayer1, mockedPlayer2, Outcome.DRAW);
 
         target.announceWinner(mockedUi);
@@ -31,7 +33,8 @@ public class RpsResultTest {
     }
 
     @Test
-    public void announceWinnerShouldRevealPlayer2Gesture(){
+    public void announceWinnerShouldRevealPlayer2Gesture()
+    {
         target = new RpsResult(mockedPlayer1, mockedPlayer2, Outcome.DRAW);
 
         target.announceWinner(mockedUi);

@@ -1,7 +1,7 @@
 package othermonkeysoftware.RPS;
 
-public class Game {
-
+public final class Game
+{
     private final RpsUi ui;
     private final PlayersBuilder playersBuilder;
     private Gesture[] validGestures;
@@ -13,14 +13,16 @@ public class Game {
         this.validGestures = validGestures;
     }
 
-    public void playRound() {
+    public void playRound()
+    {
         GameMode mode = this.ui.askForGameMode();
         Players players = this.playersBuilder.selectPlayers(mode, this.ui);
         RpsResult result = players.roShamBo(this.validGestures);
         result.announceWinner(this.ui);
     }
 
-    public boolean playAgain() {
+    public boolean playAgain()
+    {
         return this.ui.askToPlayAgain();
     }
 }

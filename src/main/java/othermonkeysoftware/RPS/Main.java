@@ -4,15 +4,17 @@ import othermonkeysoftware.RPS.Gestures.PaperGesture;
 import othermonkeysoftware.RPS.Gestures.RockGesture;
 import othermonkeysoftware.RPS.Gestures.ScissorsGesture;
 
-public class Main {
+public final class Main
+{
+    public static void main(String[] args)
+    {
 
-    public static void main(String[] args) {
-
-        Gesture[] validGestures = new Gesture[]{
-                new RockGesture(),
-                new ScissorsGesture(),
-                new PaperGesture()
-        };
+        Gesture[] validGestures =
+                {
+                    new RockGesture(),
+                    new ScissorsGesture(),
+                    new PaperGesture()
+                };
 
         RpsUi rpsUi = new ConsoleUi();
         PlayersBuilder playersBuilder = new PlayersBuilder(

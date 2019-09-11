@@ -6,14 +6,15 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
-public class UiGesturePickerTest {
-
+public class UiGesturePickerTest
+{
     private RpsUi mockedUi;
 
     private UiGesturePicker target;
 
     @Before
-    public void setUp() {
+    public void setUp()
+    {
         mockedUi = mock(RpsUi.class);
         target = new UiGesturePicker(mockedUi);
 
@@ -21,7 +22,8 @@ public class UiGesturePickerTest {
     }
 
     @Test
-    public void selectGestureShouldUseUi() {
+    public void selectGestureShouldUseUi()
+    {
         Gesture[] gestures = new Gesture[]{};
 
         target.selectGesture(gestures);
@@ -30,7 +32,8 @@ public class UiGesturePickerTest {
     }
 
     @Test
-    public void selectGestureShouldNotBeNull() {
+    public void selectGestureShouldNotBeNull()
+    {
         Gesture[] gestures = new Gesture[]{};
 
         when(mockedUi.askForPlayerGesture(gestures)).thenReturn(mock(Gesture.class));
@@ -40,7 +43,8 @@ public class UiGesturePickerTest {
     }
 
     @Test
-    public void selectGesture() {
+    public void selectGesture()
+    {
         Gesture[] gestures = new Gesture[]{};
 
         Gesture expected = mock(Gesture.class);

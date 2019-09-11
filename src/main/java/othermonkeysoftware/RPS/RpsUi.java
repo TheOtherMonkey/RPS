@@ -1,6 +1,7 @@
 package othermonkeysoftware.RPS;
 
-public interface RpsUi {
+public interface RpsUi
+{
     boolean askToPlayAgain();
 
     String askForPlayerName();
@@ -9,7 +10,7 @@ public interface RpsUi {
 
     Gesture askForPlayerGesture(Gesture[] gestures);
 
-    void rescribePlayerGesture(String playerName, String gestureName);
+    void describePlayerGesture(String playerName, String gestureName);
 
     void announceWinner(String playerName);
 

@@ -6,18 +6,19 @@ import org.junit.Test;
 import othermonkeysoftware.RPS.Gesture;
 import othermonkeysoftware.RPS.Outcome;
 
-public class RockGestureTest {
-
+public class RockGestureTest
+{
     private RockGesture target;
 
     @Before
-    public void setUp(){
+    public void setUp()
+    {
         this.target = new RockGesture();
     }
 
-
     @Test
-    public void compareRockShouldBeatScissors() {
+    public void compareRockShouldBeatScissors()
+    {
         Outcome expected = Outcome.PLAYER_1_WIN;
 
         Gesture player2Gesture = new ScissorsGesture();
@@ -27,7 +28,8 @@ public class RockGestureTest {
     }
 
     @Test
-    public void compareRockShouldLoseToPaper() {
+    public void compareRockShouldLoseToPaper()
+    {
         Outcome expected = Outcome.PLAYER_2_WIN;
 
         Gesture player2Gesture = new PaperGesture();
@@ -37,7 +39,8 @@ public class RockGestureTest {
     }
 
     @Test
-    public void compareRockShouldDrawWithRock() {
+    public void compareRockShouldDrawWithRock()
+    {
         Outcome expected = Outcome.DRAW;
 
         Gesture player2Gesture = new RockGesture();

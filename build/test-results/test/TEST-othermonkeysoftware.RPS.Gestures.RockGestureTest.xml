@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="othermonkeysoftware.RPS.Gestures.RockGestureTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-09-08T20:40:46" hostname="C02YJ0NUJG5H" time="0.0">
-  <properties/>
-  <testcase name="compareRockShouldDrawWithRock" classname="othermonkeysoftware.RPS.Gestures.RockGestureTest" time="0.0"/>
-  <testcase name="compareRockShouldLoseToPaper" classname="othermonkeysoftware.RPS.Gestures.RockGestureTest" time="0.0"/>
-  <testcase name="compareRockShouldBeatScissors" classname="othermonkeysoftware.RPS.Gestures.RockGestureTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

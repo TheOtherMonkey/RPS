@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="othermonkeysoftware.RPS.Gestures.PaperGestureTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-09-08T20:40:46" hostname="C02YJ0NUJG5H" time="0.0">
-  <properties/>
-  <testcase name="comparePaperShouldLoseToScissors" classname="othermonkeysoftware.RPS.Gestures.PaperGestureTest" time="0.0"/>
-  <testcase name="comparePaperShouldBeatRock" classname="othermonkeysoftware.RPS.Gestures.PaperGestureTest" time="0.0"/>
-  <testcase name="comparePaperShouldDrawWithPaper" classname="othermonkeysoftware.RPS.Gestures.PaperGestureTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

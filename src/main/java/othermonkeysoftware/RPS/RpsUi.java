@@ -18,7 +18,5 @@ public interface RpsUi
 
     void describeGesture(String name, String inputValue);
 
-    void describeWinningGesture(String name, String winningAdjective);
-
-    void describeLosingGesture(String name);
+    void describeWinningResult(String winningGesture, String winningAdjective, String losingGesture);
 }

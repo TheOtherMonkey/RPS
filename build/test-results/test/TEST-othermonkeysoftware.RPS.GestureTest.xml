@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="othermonkeysoftware.RPS.GestureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-08T20:40:46" hostname="C02YJ0NUJG5H" time="0.001">
-  <properties/>
-  <testcase name="revealFor" classname="othermonkeysoftware.RPS.GestureTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

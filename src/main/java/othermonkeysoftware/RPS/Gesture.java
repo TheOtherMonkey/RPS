@@ -13,13 +13,7 @@ public abstract class  Gesture
 
     public boolean matchesInput(String userInput)
     {
-        boolean result = userInput.equalsIgnoreCase(getInputMatchValue());
-        return result;
-    }
-
-    public void revealFor(String playerName, RpsUi ui)
-    {
-        ui.describePlayerGesture(playerName, getName());
+        return userInput.equalsIgnoreCase(getInputMatchValue());
     }
 
     public abstract Outcome compare(Gesture player2Gesture);
@@ -27,15 +21,5 @@ public abstract class  Gesture
     protected boolean isGesture(Gesture gesture, Class<?> gestureClass)
     {
         return gesture.getClass().isAssignableFrom(gestureClass);
-    }
-
-    public void announceWon(RpsUi ui)
-    {
-        ui.describeWinningGesture(getName(), getWinningAdjective());
-    }
-
-    public void announceLost(RpsUi ui)
-    {
-        ui.describeLosingGesture(getName());
     }
 }

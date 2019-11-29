@@ -1,5 +1,6 @@
 package othermonkeysoftware.RPS;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,11 +20,30 @@ public class GestureTest
     }
 
     @Test
-    public void revealFor()
+    public void describeSelf()
     {
-        String playerName = "Player Name 1";
-        target.revealFor(playerName, mockedUi);
+        target.describeSelf(mockedUi);
+        verify(mockedUi).describeGesture("TEST", "T");
+    }
 
-        verify(mockedUi).describePlayerGesture(playerName, "TEST");
+    @Test
+    public void matchesInputLowerCaseT()
+    {
+        Boolean actual = target.matchesInput("t");
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void matchesInputUpperCaseT()
+    {
+        Boolean actual = target.matchesInput("T");
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void matchesInputFalse()
+    {
+        Boolean actual = target.matchesInput("X");
+        Assert.assertFalse(actual);
     }
 }

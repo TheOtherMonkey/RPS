@@ -24,18 +24,8 @@ public class PlayersTest
         mockedPlayer1Gesture = mock(Gesture.class);
         mockedPlayer2Gesture = mock(Gesture.class);
 
-        when(mockedPlayer1.selectGesture(validGestures)).thenReturn(mockedPlayer1Gesture);
-        when(mockedPlayer2.selectGesture(validGestures)).thenReturn(mockedPlayer2Gesture);
-
         when(mockedPlayer1Gesture.compare(mockedPlayer2Gesture)).thenReturn(Outcome.DRAW);
         target = new Players(mockedPlayer1, mockedPlayer2);
-    }
-
-    @Test
-    public void roShamBoShouldNotReturnNull()
-    {
-        RpsResult actual = target.roShamBo(validGestures);
-        Assert.assertNotNull(actual);
     }
 
     @Test
@@ -50,13 +40,5 @@ public class PlayersTest
     {
         target.roShamBo(validGestures);
         verify(mockedPlayer2).selectGesture(validGestures);
-    }
-
-    @Test
-    public void roShamBoShouldCompareGestures()
-    {
-        target.roShamBo(validGestures);
-
-        verify(mockedPlayer1Gesture).compare(mockedPlayer2Gesture);
     }
 }

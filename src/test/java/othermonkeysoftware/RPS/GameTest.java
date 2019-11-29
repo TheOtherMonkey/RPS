@@ -3,14 +3,13 @@ package othermonkeysoftware.RPS;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.mockito.Mockito.*;
 
 public class GameTest
 {
     private RpsUi mockedUi;
-    private PlayersBuilder mockedBuilder;
     private Players mockedPlayers;
-    private RpsResult mockedResult;
     private Gesture[] gestures = new Gesture[]{};
 
     private Game target;
@@ -18,15 +17,14 @@ public class GameTest
     @Before
     public void setUp()
     {
-        mockedBuilder = mock(PlayersBuilder.class);
+        PlayersBuilder mockedBuilder = mock(PlayersBuilder.class);
         mockedUi = mock(RpsUi.class);
         mockedPlayers = mock(Players.class);
-        mockedResult = mock(RpsResult.class);
 
         validateMockitoUsage();
 
+        when(mockedBuilder.selectPlayers(GameMode.COMPUTER_VS_COMPUTER, mockedUi)).thenReturn(mockedPlayers);
         when(mockedUi.askForGameMode()).thenReturn(GameMode.COMPUTER_VS_COMPUTER);
-        when(mockedPlayers.roShamBo(gestures)).thenReturn(mockedResult);
         target = new Game(mockedUi, mockedBuilder, gestures);
     }
 
@@ -51,7 +49,7 @@ public class GameTest
     {
         target.playRound();
 
-        verify(mockedResult).announceWinner(mockedUi);
+        verify(mockedPlayers).announceResult(mockedUi);
     }
 
     @Test

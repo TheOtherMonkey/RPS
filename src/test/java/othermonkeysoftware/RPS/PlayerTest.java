@@ -33,7 +33,7 @@ public class PlayerTest
         target.selectGesture(gestures);
         target.revealGesture(mockedUi);
 
-        verify(mockedGesture).revealFor(PlayerName, mockedUi);
+        verify(mockedUi).describePlayerGesture(PlayerName, mockedGesture.getName());
     }
 
     @Test
@@ -41,16 +41,5 @@ public class PlayerTest
     {
         target.selectGesture(gestures);
         verify(mockedPicker).selectGesture(gestures);
-    }
-
-    @Test
-    public void selectGestureReturnsSelectedGesture()
-    {
-        Gesture mockedGesture = mock(Gesture.class);
-        when(mockedPicker.selectGesture(gestures)).thenReturn(mockedGesture);
-
-        Gesture actual = target.selectGesture(gestures);
-
-        Assert.assertSame(mockedGesture, actual);
     }
 }

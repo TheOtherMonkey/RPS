@@ -4,9 +4,9 @@ public final class Game
 {
     private final RpsUi ui;
     private final PlayersBuilder playersBuilder;
-    private Gesture[] validGestures;
+    private final Gesture[] validGestures;
 
-    public Game(RpsUi ui, PlayersBuilder playersBuilder, Gesture[] validGestures)
+    public Game(final RpsUi ui, final PlayersBuilder playersBuilder, final Gesture[] validGestures)
     {
         this.ui = ui;
         this.playersBuilder = playersBuilder;
@@ -15,10 +15,11 @@ public final class Game
 
     public void playRound()
     {
-        GameMode mode = this.ui.askForGameMode();
-        Players players = this.playersBuilder.selectPlayers(mode, this.ui);
-        RpsResult result = players.roShamBo(this.validGestures);
-        result.announceWinner(this.ui);
+        final GameMode mode = this.ui.askForGameMode();
+        final Players players = this.playersBuilder.selectPlayers(mode, this.ui);
+
+        players.roShamBo(this.validGestures);
+        players.announceResult(this.ui);
     }
 
     public boolean playAgain()

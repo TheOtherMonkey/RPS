@@ -12,25 +12,19 @@ public class Player
        this.gesturePicker = gesturePicker;
     }
 
-    public void revealGesture(RpsUi ui)
+    public Gesture revealGesture(RpsUi ui)
     {
-        this.lastGesture.revealFor(name, ui);
+        ui.describePlayerGesture(name, this.lastGesture.getName());
+        return this.lastGesture;
     }
 
     public void announceAsWinner(RpsUi ui)
     {
         ui.announceWinner(this.name);
-        this.lastGesture.announceWon(ui);
     }
 
-    public void announceAsLoser(RpsUi ui)
-    {
-        this.lastGesture.announceLost(ui);
-    }
-
-    public Gesture selectGesture(Gesture[] gestures)
+    public void selectGesture(Gesture[] gestures)
     {
         this.lastGesture = this.gesturePicker.selectGesture(gestures);
-        return this.lastGesture;
     }
 }

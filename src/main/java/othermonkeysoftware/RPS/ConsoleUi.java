@@ -1,6 +1,5 @@
 package othermonkeysoftware.RPS;
 
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Stream;
@@ -84,9 +83,9 @@ public final class ConsoleUi implements RpsUi
     @Override
     public void announceWinner(String playerName)
     {
-        System.out.println();
         System.out.print(playerName);
         System.out.println(" won that round");
+        System.out.println();
     }
 
     @Override
@@ -105,6 +104,12 @@ public final class ConsoleUi implements RpsUi
     }
 
     @Override
+    public void describeWinningResult(String winningGesture, String winningAdjective, String losingGesture)
+    {
+        describeWinningGesture(winningGesture, winningAdjective);
+        describeLosingGesture(losingGesture);
+    }
+
     public void describeWinningGesture(String name, String winningAdjective)
     {
         System.out.print(name);
@@ -113,7 +118,6 @@ public final class ConsoleUi implements RpsUi
         System.out.print(" ");
     }
 
-    @Override
     public void describeLosingGesture(String name)
     {
         System.out.println(name);
